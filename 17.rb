@@ -16,8 +16,8 @@ def letter_combinations(input)
     if digits.empty?
       ['']
     else
-      BUTTONS[digits[0]].chars.product(construct.call(digits[1..-1])).map { |i| i.join }
+      BUTTONS[digits[0]].chars.product(construct.call(digits[1..-1]))
     end
   end
-  construct.call(input)
+  construct.call(input).map { |i| i.join }
 end
