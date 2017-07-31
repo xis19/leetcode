@@ -1,1 +1,16 @@
-SELECT name, population, area FROM World WHERE area > 3000000 OR population > 25000000;
+SELECT
+    class
+FROM (
+    SELECT
+        COUNT(*) AS num, CLASS
+    FROM (
+        SELECT
+            DISTINCT CONCAT(student, class), student, class
+        FROM
+            courses
+    ) AS TMP1
+    GROUP BY
+        class
+) AS TMP2
+WHERE
+    num >= 5;
