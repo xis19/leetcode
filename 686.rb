@@ -7,7 +7,7 @@ def repeated_string_match(a, b)
   # this ensure the situation
   #     aaaaaa + aaaaaa
   #        \---b---/
-  (1..[len_b / len_a + 1, 2].max).each do |i|
+  (1..[len_b / len_a + 2, 2].max).each do |i|
     return i if s.include?(b)
     s += a
   end
