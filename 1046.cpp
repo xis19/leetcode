@@ -14,5 +14,5 @@ int lastStoneWeight(const std::vector<int>& stones) {
         if (y > x) stoneHeap.push(y - x);
     }
 
-    return stoneHeap.top();
+    return stoneHeap.empty() ? 0 : stoneHeap.top();
 }
